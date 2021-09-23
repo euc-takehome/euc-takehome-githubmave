@@ -1,29 +1,14 @@
 const express = require('express')
 const server = express()
 //const path = require('path')
-const router = express.Router()
+const myRoute = require('./server/routers')
 
 
 server.use(express.json())
 // server.use(express.static(path.join()))
 
+server.use('/quizs/v1/quiz1',myRoute)
 
-router.get('/',(req,res)=>{
-
-     res.json( {message:"A new sone has been released by Lorde"})
-})
-
-
-server.use('/quizs/v1/quiz1',router)
-
-// server.get('/',(req,res)=>{
-
-//    res.json({text:"Lorde has released a new song!"})
-// })
-
-
-
-//const PORT= 8000
 
 const PORT = process.env.PORT || 8000
 
