@@ -38,9 +38,8 @@ class App extends React.Component {
 
                 <ul className="todo-list">
             
-                  <AddTodo />
-                  <TodoList todoList={this.props.todoArr}/>
-                  <Route path="/:todoid/" component={TodoItem}>
+                  <PatnList patnList={this.props.patnArr}/>
+                  <Route path="/:patnid/" component={PatnItem}>
 
                   </Route>
                 </ul>
