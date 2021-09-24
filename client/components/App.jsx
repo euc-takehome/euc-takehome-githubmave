@@ -1,72 +1,72 @@
-// import React from 'react'
-// import { connect } from 'react-redux'
-// import { getTodos } from '../apis/api'
+import React from 'react'
+import { connect } from 'react-redux'
+import { getQuizs } from '../apis/api'
  
-// import AddTodo from './AddTodo'
-// import TodoItem from './TodoItem'
-// import TodoList from './TodoList'
 
-// import {HashRouter as Router,Route} from 'react-router-dom'
+import TodoItem from './TodoItem'
+import TodoList from './TodoList'
+
+import {HashRouter as Router,Route} from 'react-router-dom'
 
 
-// class App extends React.Component {
+class App extends React.Component {
 
     
      
-//   componentDidMount () {
+  componentDidMount () {
      
-//       getTodos(this.props.dispatch)
-//       // .then(todos=> this.setState({todoArr: todos}))
+      getTodos(this.props.dispatch)
+      // .then(todos=> this.setState({todoArr: todos}))
       
-//   }
+  }
   
 
-//   render () {
+  render () {
   
 
   
    
-//     return (
-//       <>
-//         <header className="header">
-//           <h1> Uni Todos </h1>
+    return (
+      <>
+        <header className="header">
+          <h1> Uni Todos </h1>
         
-//         </header>
+        </header>
          
        
-//         <Router>
+        <Router>
 
-//                 <ul className="todo-list">
+                <ul className="todo-list">
             
-//                   <AddTodo />
-//                   <TodoList todoList={this.props.todoArr}/>
-//                   <Route path="/:todoid/" component={TodoItem}>
+                  <AddTodo />
+                  <TodoList todoList={this.props.todoArr}/>
+                  <Route path="/:todoid/" component={TodoItem}>
 
-//                   </Route>
-//                   {/* <div className="view">
+                  </Route>
+                  {/* <div className="view">
                    
 
-//                 {this.props.todoArr.map((todo,i)=><li className="new-todo" key={i}>{todo.todoName}<button className="destroy"></button></li> )}
+                {this.props.todoArr.map((todo,i)=><li className="new-todo" key={i}>{todo.todoName}<button className="destroy"></button></li> )}
 
                   
-//                   </div> */}
+                  </div> */}
 
                  
 
-//                 </ul>
+                </ul>
               
            
-//         </Router>  
+        </Router>  
           
-//         <footer className="footer"></footer>
-//       </>
-//     )
-//   }
-// }
+        <footer className="footer"></footer>
+      </>
+    )
+  }
+}
 
-// function mapStateToProps(state){
-//          return{todoArr: state.todosRdc}
+function mapStateToProps(state){
+         return{todoArr: state.todosRdc}
 
-// }
+}
 
-// export default connect(mapStateToProps)(App)
+export default connect(mapStateToProps)(App)

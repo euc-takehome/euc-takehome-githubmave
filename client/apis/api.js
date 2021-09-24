@@ -1,13 +1,13 @@
 
 import request from 'superagent'
-import {getQuizItems} from '../actions/quizsAc'
+import {getPatnItems} from '../actions/patnAc'
  
 
-export function getQuizs(dispatch){
+export function getPatns(dispatch){
 
   return request 
-         .get('/api/v1/quiz1')
-         .then( response=> dispatch(getQuizItems(response.body)))
+         .get('/api/v1/patn1')
+         .then( response=> dispatch(getPatnItems(response.body)))
 }
 
     
