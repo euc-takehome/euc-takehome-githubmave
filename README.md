@@ -1,7 +1,7 @@
 
 How to run this app?
 
-Tools is needed:
+Tools are needed:
 -npm or yarn
 -node :version 16
 -Git
@@ -15,7 +15,7 @@ npm run start or yarn start
 What this app is doing:
 
 -create web server with expressjs
--import SQLite server
+-import SQLite db
 -create connection with database server
 -create table in database
 -connect web server with database
