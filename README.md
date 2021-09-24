@@ -12,5 +12,11 @@ npm i
 
 npm run start or yarn start
 
+What this app is doing:
 
-
+-create web server with expressjs
+-import SQLite server
+-create connection with database server
+-create table in database
+-connect web server with database
+-grep data from database , and make data RESTful, then deliver data via http to front end
