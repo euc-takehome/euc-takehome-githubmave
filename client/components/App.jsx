@@ -3,8 +3,8 @@ import { connect } from 'react-redux'
 import { getPatns } from '../apis/api'
  
 
-import TodoItem from './TodoItem'
-import TodoList from './TodoList'
+import PatnItem from './PatnItem'
+import PatnList from './PatnList'
 
 import {HashRouter as Router,Route} from 'react-router-dom'
 
@@ -15,7 +15,7 @@ class App extends React.Component {
      
   componentDidMount () {
      
-      getTodos(this.props.dispatch)
+      getPatns(this.props.dispatch)
       // .then(todos=> this.setState({todoArr: todos}))
       
   }
@@ -29,7 +29,7 @@ class App extends React.Component {
     return (
       <>
         <header className="header">
-          <h1> Uni Todos </h1>
+          <h1> Patients </h1>
         
         </header>
          
@@ -43,16 +43,6 @@ class App extends React.Component {
                   <Route path="/:todoid/" component={TodoItem}>
 
                   </Route>
-                  {/* <div className="view">
-                   
-
-                {this.props.todoArr.map((todo,i)=><li className="new-todo" key={i}>{todo.todoName}<button className="destroy"></button></li> )}
-
-                  
-                  </div> */}
-
-                 
-
                 </ul>
               
            
@@ -65,7 +55,7 @@ class App extends React.Component {
 }
 
 function mapStateToProps(state){
-         return{todoArr: state.todosRdc}
+         return{patnArr: state.patnRdc}
 
 }
 
