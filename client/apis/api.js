@@ -1,13 +1,13 @@
 
 import request from 'superagent'
-import {getPatnItems} from '../actions/patnAc'
+import {getPatnsItems} from '../actions/patnAc'
  
 
 export function getPatns(dispatch){
 
   return request 
          .get('/api/v1/patn1')
-         .then( response=> dispatch(getPatnItems(response.body)))
+         .then( response=> dispatch(getPatnsItems(response.body)))
 }
 
     

@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { getQuizs } from '../apis/api'
+import { getPatns } from '../apis/api'
  
 
 import TodoItem from './TodoItem'
