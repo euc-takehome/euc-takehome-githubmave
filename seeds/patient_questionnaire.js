@@ -5,9 +5,9 @@ exports.seed = function(knex) {
     .then(function () {
       // Inserts seed entries
       return knex('patient_questionnaire').insert([
-        {id: 1, colName: 'rowValue1'},
-        {id: 2, colName: 'rowValue2'},
-        {id: 3, colName: 'rowValue3'}
+        {First_Name:"Jill", Last_Name:"Bodland",Date_of_Birth:"Jan_01_01",Allergies:"peanut",Medications:"panmol"}
+        
       ]);
     });
 };
+  
