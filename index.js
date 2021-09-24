@@ -1,3 +1,5 @@
+//This file is to initiate a RESTful server with expressjs
+
 const express = require('express')
 const server = express()
 //const path = require('path')

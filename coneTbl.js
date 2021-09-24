@@ -1,3 +1,5 @@
+// this file is to grep data from db & deliver them to router on Expressjs server
+
 const knex = require
 ('knex')
 

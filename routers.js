@@ -1,3 +1,5 @@
+
+//This file is to grep data from data object and deliver them to the front end
 const express = require('express')
 const router = express.Router()
 const {findPatient} = require('./coneTbl')
