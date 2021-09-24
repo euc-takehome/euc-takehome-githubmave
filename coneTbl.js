@@ -9,10 +9,16 @@ const db =knex(config.development
 
 module.exports = {
 
-    findPatient
+    findPatient,
+    findPatientById
 }
 
 async function findPatient(){
 
     return db('patient_questionnaire').select()
+}
+
+async function findPatientById(id, db){
+
+    return db('patient_questionnaire').select().where({id}).first
 }
