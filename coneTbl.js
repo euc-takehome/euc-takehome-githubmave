@@ -14,5 +14,5 @@ module.exports = {
 
 async function findPatient(){
 
-    return db('patient_questionnaire')
+    return db('patient_questionnaire').select()
 }

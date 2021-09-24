@@ -5,7 +5,7 @@ const router = express.Router()
 const {findPatient} = require('./coneTbl')
 
 router.get('/',(req,res)=>{
-
+       
        findPatient()
          .then((patientLs) =>{
 
