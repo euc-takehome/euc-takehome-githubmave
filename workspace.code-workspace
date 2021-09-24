@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "../../../../aihe-Todo-Test/aihe-TodoProj"
+		},
+		{
+			"path": "../../../../aihe/week3_Express_Router_Render_DataIn_Knex_Sqlite_To_Handlebars_Wombles_T/knex-joins-stories-KATE-ROWAN-MAVE"
 		}
 	],
 	"settings": {}
