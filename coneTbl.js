@@ -10,11 +10,7 @@ module.exports = {
     findPatient
 }
 
-async function find(id,db){
+async function findPatient(){
 
-    return db('patient_questionnaire').select().where(
-       {id}.first() 
-    )
-
-
+    return db('patient_questionnaire')
 }
