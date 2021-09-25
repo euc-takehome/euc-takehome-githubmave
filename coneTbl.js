@@ -7,6 +7,8 @@ const config = require('./knexfile')
 const db =knex(config.development
     )
 
+
+
 module.exports = {
 
     findPatient,
@@ -18,7 +20,7 @@ module.exports = {
 }
 
 async function findPatient(data=db){
-    const cols=['id','Date_of_Birth','First_Name','Last_Name']
+    const cols=['id','Date_of_Birth','First_Name','Last_Name','Allergies','Medications']
     return db('patient_questionnaire')
               .select(cols)
             
@@ -26,7 +28,7 @@ async function findPatient(data=db){
 }
 
 async function findPatientById(id,data=db){
-    const cols=['id','Date_of_Birth','First_Name','Last_Name']
+    const cols=['Date_of_Birth','First_Name','Last_Name','Allergies','Medications']
     return db('patient_questionnaire').select(cols).where('id',id).first()
 
 }
