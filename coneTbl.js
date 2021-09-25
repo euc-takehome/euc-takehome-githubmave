@@ -18,22 +18,23 @@ module.exports = {
 }
 
 async function findPatient(data=db){
-
+    
     return db('patient_questionnaire')
               .select()
               .then( patns =>{
+                  let patn1={}
                  return patns.map(patn =>{
-                    patn.Date_of_Birth =patn.Date_of_Birth
+                    patn1.Date_of_Birth =patn.Date_of_Birth
 
-                    patn.First_Name =patn.First_Name
+                    patn1.First_Name =patn.First_Name
 
-                    patn.Last_Name = patn.Last_Name
+                    patn1.Last_Name = patn.Last_Name
 
-                    patn.Allergie = patn.Allergie
+                    patn1.Allergie = patn.Allergie
 
-                    patn.Medication = patn.Medication
+                    patn1.Medication = patn.Medication
 
-                    return patn
+                    return patn1
                  })
                   
               })
@@ -43,17 +44,18 @@ async function findPatientById(id,data=db){
 
     return db('patient_questionnaire').select().where('id',id).first()
       .then(patn =>{
-        patn.Date_of_Birth =patn.Date_of_Birth
+        let patn1={}
+        patn1.Date_of_Birth =patn.Date_of_Birth
 
-        patn.First_Name =patn.First_Name
+        patn1.First_Name =patn.First_Name
 
-        patn.Last_Name = patn.Last_Name
+        patn1.Last_Name = patn.Last_Name
 
-        patn.Allergie = patn.Allergie
+        patn1.Allergie = patn.Allergie
 
-        patn.Medication = patn.Medication
+        patn1.Medication = patn.Medication
 
-         return patn
+         return patn1
 })
 }
 
