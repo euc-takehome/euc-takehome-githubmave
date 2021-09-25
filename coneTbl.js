@@ -30,9 +30,9 @@ async function findPatient(data=db){
 
                     patn1.Last_Name = patn.Last_Name
 
-                    patn1.Allergie = patn.Allergie
+                    patn1.Allergies = patn.Allergie
 
-                    patn1.Medication = patn.Medication
+                    patn1.Medications = patn.Medication
 
                     return patn1
                  })
@@ -51,9 +51,9 @@ async function findPatientById(id,data=db){
 
         patn1.Last_Name = patn.Last_Name
 
-        patn1.Allergie = patn.Allergie
+        patn1.Allergies = patn.Allergie
 
-        patn1.Medication = patn.Medication
+        patn1.Medications = patn.Medication
 
          return patn1
 })
