@@ -2,14 +2,14 @@
 
 const express = require('express')
 const server = express()
-//const path = require('path')
+const path = require('path')
 const myRoute = require('./routers')
 
 
 server.use(express.json())
-// server.use(express.static(path.join()))
+server.use(express.static(path.join()))
 
-server.use('/api/v1/quiz1',myRoute)
+server.use('/api/v1/patn1',myRoute)
 
 
 const PORT = process.env.PORT || 8000
