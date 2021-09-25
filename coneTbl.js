@@ -21,12 +21,42 @@ async function findPatient(data=db){
 
     return db('patient_questionnaire')
               .select()
+              .then( patns =>{
+                 return patns.map(patn =>{
+                    patn.Date_of_Birth =patn.Date_of_Birth
+
+                    patn.First_Name =patn.First_Name
+
+                    patn.Last_Name = patn.Last_Name
+
+                    patn.Allergie = patn.Allergie
+
+                    patn.Medication = patn.Medication
+
+                    return patn
+                 })
+                  
+              })
 }
 
 async function findPatientById(id,data=db){
 
     return db('patient_questionnaire').select().where('id',id).first()
+      .then(patn =>{
+        patn.Date_of_Birth =patn.Date_of_Birth
+
+        patn.First_Name =patn.First_Name
+
+        patn.Last_Name = patn.Last_Name
+
+        patn.Allergie = patn.Allergie
+
+        patn.Medication = patn.Medication
+
+         return patn
+})
 }
+
 
 async function addPatient(newPatn,data = db){
    
