@@ -2,7 +2,7 @@
 //This file is to grep data from data object and deliver them to the front end
 const express = require('express')
 const router = express.Router()
-const {findPatient,findPatientById,addPatient,updatePatn,deletePatn
+const {findPatient,findPatientById
 } = require('./coneTbl')
 
 router.get('/',(req,res)=>{
@@ -21,5 +21,24 @@ router.get('/',(req,res)=>{
          })
     
     })
+
+
+
+router.get('/:id',(req,res)=>{
+    const id = Number(req.params.id)
+    findPatientById(id)
+     .then(patn =>{
+       res.json(patn)
+        
+     })
+     .catch(err =>{
+
+         console.log(err)
+         res.status(500)
+     })
+})
+
+
+
 
 module.exports = router
