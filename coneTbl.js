@@ -14,7 +14,7 @@ module.exports = {
     findPatient,
     findQuestionById,
     findPatientById,
-   // findAnswerById,
+    findAnswerById,
     addPatient,
     updatePatn,
     deletePatn
@@ -39,14 +39,14 @@ async function findQuestionById(id,data=db){
         
 }
 
-// async function findAnswerById(id,data=db){
+async function findAnswerById(id,data=db){
     
-//     const cols=['id','answer']
-//     return db('questionnaire_answer2')
-//             .join('questionnaire_question2','questionnaire_question2.id','questionnaire_answer2.question_id')
-//             .select(cols).where('questionnaire_question2.id',id)
+    //const cols=['id','answer']
+    return db('questionnaire_answer2')
+            .join('questionnaire_question2','questionnaire_question2.id','questionnaire_answer2.question_id')
+            .select('questionnaire_answer2.id as ID','questionnaire_answer2.answer').where('questionnaire_question2.id',id)
         
-// }
+}
 
 
 async function findPatientById(id,data=db){

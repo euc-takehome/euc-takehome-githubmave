@@ -3,7 +3,7 @@
 const express = require('express')
 const router = express.Router()
 
-const {findPatient,findPatientById,findQuestionById} = require('./coneTbl')
+const {findPatient,findPatientById,findQuestionById,findAnswerById} = require('./coneTbl')
 
 router.get('/',(req,res)=>{
        
@@ -53,21 +53,21 @@ router.get('/:id/questions',(req,res)=>{
    })
 })
 
-// router.get('/:id/questions/:quesId',(req,res)=>{
-//   const id = Number(req.params.id)
-//  // const quesId =req.params.quesId
+router.get('/:id/questions/:quesId',(req,res)=>{
+  const id = Number(req.params.id)
+  const quesId =req.params.quesId
 
-//   findAnswerById(id)
-//    .then(ansLs =>{
-//      res.json(ansLs)
+  findAnswerById(quesId)
+   .then(ansLs =>{
+     res.json(ansLs)
       
-//    })
-//    .catch(err =>{
+   })
+   .catch(err =>{
 
-//        console.log(err)
-//        res.status(500)
-//    })
-// })
+       console.log(err)
+       res.status(500)
+   })
+})
 
 
 
