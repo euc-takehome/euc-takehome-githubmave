@@ -2,7 +2,7 @@
 exports.up = function(knex) {
     return knex.schema.createTable('patient_questionnaire2', tbl =>{
   
-        tbl.increments() // id field
+        tbl.increments('id').primary() // id field
         tbl.text('First_Name',128)
           .notNullable()
         tbl.text('Last_Name')

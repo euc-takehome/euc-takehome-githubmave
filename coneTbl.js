@@ -32,7 +32,8 @@ async function findPatient(data=db){
 async function findQuestion(data=db){
     const cols=['id','description']
     return db('questionnaire_question2')
-              .select(cols)
+            .join('patient_questionnaire2','patient_questionnaire2.id','questionnaire_question2.patient_id')
+            .select(cols)
         
 }
 
