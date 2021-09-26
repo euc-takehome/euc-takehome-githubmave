@@ -12,6 +12,7 @@ const db =knex(config.development
 module.exports = {
 
     findPatient,
+    findQuestion,
     findPatientById,
     addPatient,
     updatePatn,
@@ -26,6 +27,16 @@ async function findPatient(data=db){
             
            
 }
+
+
+async function findQuestion(data=db){
+    const cols=['id','description']
+    return db('questionnaire_question2')
+              .select(cols)
+        
+}
+
+
 
 async function findPatientById(id,data=db){
     const cols=['Date_of_Birth','First_Name','Last_Name','Allergies','Medications']
