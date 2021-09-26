@@ -21,7 +21,7 @@ module.exports = {
 
 async function findPatient(data=db){
     const cols=['id','Date_of_Birth','First_Name','Last_Name','Allergies','Medications']
-    return db('patient_questionnaire')
+    return db('patient_questionnaire2')
               .select(cols)
             
            
@@ -29,20 +29,20 @@ async function findPatient(data=db){
 
 async function findPatientById(id,data=db){
     const cols=['Date_of_Birth','First_Name','Last_Name','Allergies','Medications']
-    return db('patient_questionnaire').select(cols).where('id',id).first()
+    return db('patient_questionnaire2').select(cols).where('id',id).first()
 
 }
 
 
 async function addPatient(newPatn,data = db){
    
-    return db('patient_questionnaire').insert(newPatn)
+    return db('patient_questionnaire2').insert(newPatn)
       .then( ids => {findPatientById(ids[0])})
 }  
 
 async function updatePatn(id,updatedPatn){
     console.log("coneTbl.js/updatePatn(id) id=",id,data=db)
-    return db('patient_questionnaire')
+    return db('patient_questionnaire2')
            .where('id',id)
            .update(updatedPatn)
            .then((itemsChanged)=>{
@@ -55,7 +55,7 @@ async function deletePatn(id,data = db){
 
      console.log("coneTbl.js/deletePatn(id) id=",id)
 
-     return db('patient_questionnaire')
+     return db('patient_questionnaire2')
              .where('id',id)
              .delete()
 }
