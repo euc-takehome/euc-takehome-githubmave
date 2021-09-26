@@ -12,7 +12,7 @@ const db =knex(config.development
 module.exports = {
 
     findPatient,
-    findQuestion,
+    findQuestionById,
     findPatientById,
     addPatient,
     updatePatn,
@@ -29,11 +29,12 @@ async function findPatient(data=db){
 }
 
 
-async function findQuestion(data=db){
-    const cols=['id','description']
+async function findQuestionById(id,data=db){
+    
+    const cols=['description']
     return db('questionnaire_question2')
             .join('patient_questionnaire2','patient_questionnaire2.id','questionnaire_question2.patient_id')
-            .select(cols)
+            .select(cols).where('patient_questionnaire2.id',id)
         
 }
 
